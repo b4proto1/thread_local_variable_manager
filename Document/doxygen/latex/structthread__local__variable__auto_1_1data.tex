@@ -1,0 +1,364 @@
+\hypertarget{structthread__local__variable__auto_1_1data}{}\doxysection{thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data Struct Reference}
+\label{structthread__local__variable__auto_1_1data}\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+
+
+T\+L\+VM 이 특정 데이터 형식에 대해서 할당한 메모리를 관리하며 사용자가 접근할 수 있도록 중계 기능 제공  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+local\+\_\+variable\+\_\+manager.\+h$>$}
+
+
+
+Collaboration diagram for thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{structthread__local__variable__auto_1_1data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a3345411ffe75c987cc294fcbf41d8d30}{data}} ()
+\item 
+\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a36816d18fe4270be3083eeedd325232b}{data}} (\mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}} const \&p\+Key, std\+::thread\+::id const \&p\+Thread\+Id, T\+T\+Y\+PE $\ast$p\+Data, bool p\+Do\+Call\+Ctor\+Dtor\+Always)
+\item 
+\mbox{\hyperlink{structthread__local__variable__auto_1_1data_ad9471aee230d99b71ba8362a15ae72f4}{data}} (\mbox{\hyperlink{structthread__local__variable__auto_1_1data}{data}} \&\&p\+Rv)
+\item 
+const T\+T\+Y\+PE $\ast$ \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}{get}} () const
+\item 
+T\+T\+Y\+PE $\ast$ \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a00c8d2d56f1a4371d923aa9177dcadfa}{get}} ()
+\item 
+bool \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b}{is\+\_\+initialized}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9e5a2e2c73c1c4b612bf50fe42fe9300}{reset}} ()
+\item 
+void \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a5f11ee33cdf8451b710f9586465d64b2}{release}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a19e225c244e3d76db67ef381d40879a8}{thread\+\_\+local\+\_\+variable\+\_\+auto}}
+\item 
+\mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}} \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}{m\+\_\+\+Uuid}}
+\begin{DoxyCompactList}\small\item\em 형식 식별자 \end{DoxyCompactList}\item 
+const std\+::thread\+::id \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\+\_\+\+Thread\+Id}}
+\begin{DoxyCompactList}\small\item\em 스레드 식별자 \end{DoxyCompactList}\item 
+T\+T\+Y\+PE $\ast$ \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\+\_\+\+Data}}
+\begin{DoxyCompactList}\small\item\em 형식 인스턴스 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}{m\+\_\+\+Do\+Call\+Ctor\+Dtor\+Always}}
+\begin{DoxyCompactList}\small\item\em 변수 회수 시에 해당 변수 형식에 대한 소멸자를 호출할지 여부 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T\+T\+Y\+PE, bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$\newline
+struct thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+P\+E, V\+C\+T\+D\+T, V\+R\+S\+S\+Z $>$\+::data}
+
+T\+L\+VM 이 특정 데이터 형식에 대해서 할당한 메모리를 관리하며 사용자가 접근할 수 있도록 중계 기능 제공 
+
+Definition at line 208 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a3345411ffe75c987cc294fcbf41d8d30}\label{structthread__local__variable__auto_1_1data_a3345411ffe75c987cc294fcbf41d8d30}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!data@{data}}
+\index{data@{data}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::data}
+
+
+
+Definition at line 316 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{317     : \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}{m\_Uuid}}(\mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\_local\_variable\_type\_uuid}}())}
+\DoxyCodeLine{318     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\_ThreadId}}(std::thread::id())}
+\DoxyCodeLine{319     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}}(\textcolor{keyword}{nullptr})}
+\DoxyCodeLine{320     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}{m\_DoCallCtorDtorAlways}}(\textcolor{keyword}{false})}
+\DoxyCodeLine{321 \{}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a36816d18fe4270be3083eeedd325232b}\label{structthread__local__variable__auto_1_1data_a36816d18fe4270be3083eeedd325232b}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!data@{data}}
+\index{data@{data}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}} const \&}]{p\+Key,  }\item[{std\+::thread\+::id const \&}]{p\+Thread\+Id,  }\item[{T\+T\+Y\+PE $\ast$}]{p\+Data,  }\item[{bool}]{p\+Do\+Call\+Ctor\+Dtor\+Always }\end{DoxyParamCaption})}
+
+
+
+Definition at line 326 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{327     : \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}{m\_Uuid}}(pUuid)}
+\DoxyCodeLine{328     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\_ThreadId}}(pThreadId)}
+\DoxyCodeLine{329     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}}(pData)}
+\DoxyCodeLine{330     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}{m\_DoCallCtorDtorAlways}}(pDoCallCtorDtorAlways)}
+\DoxyCodeLine{331 \{}
+\DoxyCodeLine{332     \textcolor{comment}{// assert       std::thread::id() != pThreadId}}
+\DoxyCodeLine{333     \textcolor{comment}{// assert       nullptr != pData}}
+\DoxyCodeLine{334 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_ad9471aee230d99b71ba8362a15ae72f4}\label{structthread__local__variable__auto_1_1data_ad9471aee230d99b71ba8362a15ae72f4}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!data@{data}}
+\index{data@{data}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structthread__local__variable__auto_1_1data}{data}} \&\&}]{p\+Rv }\end{DoxyParamCaption})}
+
+
+
+Definition at line 337 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{338     : \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}{m\_Uuid}}(pRv.m\_Uuid)}
+\DoxyCodeLine{339     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\_ThreadId}}(pRv.m\_ThreadId)}
+\DoxyCodeLine{340     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}}(pRv.m\_Data)}
+\DoxyCodeLine{341     , \mbox{\hyperlink{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}{m\_DoCallCtorDtorAlways}}(pRv.m\_DoCallCtorDtorAlways)}
+\DoxyCodeLine{342 \{}
+\DoxyCodeLine{343     pRv.reset();}
+\DoxyCodeLine{344 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{structthread__local__variable__auto_1_1data_ad9471aee230d99b71ba8362a15ae72f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a00c8d2d56f1a4371d923aa9177dcadfa}\label{structthread__local__variable__auto_1_1data_a00c8d2d56f1a4371d923aa9177dcadfa}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!get@{get}}
+\index{get@{get}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+T\+T\+Y\+PE$\ast$ \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 223 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{224         \{}
+\DoxyCodeLine{225 \textcolor{preprocessor}{\#if defined(DEBUG) || defined(\_DEBUG)}}
+\DoxyCodeLine{226             assert(\textcolor{keyword}{true} == \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b}{is\_initialized}}() \&\& std::this\_thread::get\_id() == \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\_ThreadId}});}
+\DoxyCodeLine{227 \textcolor{preprocessor}{\#endif  // DEBUG || \_DEBUG}}
+\DoxyCodeLine{228             \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}TTYPE*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a3345411ffe75c987cc294fcbf41d8d30}{data}}*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}{get}}());}
+\DoxyCodeLine{229         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{structthread__local__variable__auto_1_1data_a00c8d2d56f1a4371d923aa9177dcadfa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}\label{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!get@{get}}
+\index{get@{get}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+const T\+T\+Y\+PE$\ast$ \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 218 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219         \{}
+\DoxyCodeLine{220             \textcolor{keywordflow}{return} \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}};}
+\DoxyCodeLine{221         \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b}\label{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!is\_initialized@{is\_initialized}}
+\index{is\_initialized@{is\_initialized}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{is\_initialized()}{is\_initialized()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+bool \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::is\+\_\+initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Definition at line 231 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{232         \{}
+\DoxyCodeLine{233             \textcolor{keywordflow}{return} (\textcolor{keyword}{nullptr} != \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}});}
+\DoxyCodeLine{234         \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a5f11ee33cdf8451b710f9586465d64b2}\label{structthread__local__variable__auto_1_1data_a5f11ee33cdf8451b710f9586465d64b2}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!release@{release}}
+\index{release@{release}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+void \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::release\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 347 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{348 \{}
+\DoxyCodeLine{349     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}}) \{}
+\DoxyCodeLine{350         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{351     \}}
+\DoxyCodeLine{352     }
+\DoxyCodeLine{353     \mbox{\hyperlink{classthread__local__variable__manager_a7686144b7e8108ed708fe6f4cf258119}{thread\_local\_variable\_manager::\_destroy}}(}
+\DoxyCodeLine{354         \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}{m\_Uuid}},}
+\DoxyCodeLine{355         \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}{m\_ThreadId}},}
+\DoxyCodeLine{356         \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}},}
+\DoxyCodeLine{357         \mbox{\hyperlink{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}{m\_DoCallCtorDtorAlways}}}
+\DoxyCodeLine{358     );}
+\DoxyCodeLine{359 }
+\DoxyCodeLine{360     \mbox{\hyperlink{structthread__local__variable__auto_1_1data_a9e5a2e2c73c1c4b612bf50fe42fe9300}{reset}}();}
+\DoxyCodeLine{361 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structthread__local__variable__auto_1_1data_a5f11ee33cdf8451b710f9586465d64b2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a9e5a2e2c73c1c4b612bf50fe42fe9300}\label{structthread__local__variable__auto_1_1data_a9e5a2e2c73c1c4b612bf50fe42fe9300}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!reset@{reset}}
+\index{reset@{reset}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+void \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 237 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{238         \{}
+\DoxyCodeLine{239             \mbox{\hyperlink{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}{m\_Data}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{240         \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{structthread__local__variable__auto_1_1data_a9e5a2e2c73c1c4b612bf50fe42fe9300_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}\label{structthread__local__variable__auto_1_1data_af0ab6cdb0b9acc769697eb70c8f1ef49}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!m\_Data@{m\_Data}}
+\index{m\_Data@{m\_Data}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{m\_Data}{m\_Data}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+T\+T\+Y\+PE$\ast$ \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::m\+\_\+\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+형식 인스턴스 
+
+
+
+Definition at line 247 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}\label{structthread__local__variable__auto_1_1data_ab55a741651ad1bc167ea627a1a77a82e}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!m\_DoCallCtorDtorAlways@{m\_DoCallCtorDtorAlways}}
+\index{m\_DoCallCtorDtorAlways@{m\_DoCallCtorDtorAlways}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{m\_DoCallCtorDtorAlways}{m\_DoCallCtorDtorAlways}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+bool \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::m\+\_\+\+Do\+Call\+Ctor\+Dtor\+Always\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+변수 회수 시에 해당 변수 형식에 대한 소멸자를 호출할지 여부 
+
+
+
+Definition at line 248 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}\label{structthread__local__variable__auto_1_1data_a9d2e7d3f5f7954ec0875443c8b543438}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!m\_ThreadId@{m\_ThreadId}}
+\index{m\_ThreadId@{m\_ThreadId}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{m\_ThreadId}{m\_ThreadId}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+const std\+::thread\+::id \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::m\+\_\+\+Thread\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+스레드 식별자 
+
+
+
+Definition at line 246 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}\label{structthread__local__variable__auto_1_1data_a51180321e461b3d54e345ec18f9151c1}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!m\_Uuid@{m\_Uuid}}
+\index{m\_Uuid@{m\_Uuid}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{m\_Uuid}{m\_Uuid}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+\mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}} \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::m\+\_\+\+Uuid\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+형식 식별자 
+
+
+
+Definition at line 245 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{structthread__local__variable__auto_1_1data_a19e225c244e3d76db67ef381d40879a8}\label{structthread__local__variable__auto_1_1data_a19e225c244e3d76db67ef381d40879a8}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}!thread\_local\_variable\_auto@{thread\_local\_variable\_auto}}
+\index{thread\_local\_variable\_auto@{thread\_local\_variable\_auto}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$::data}}
+\doxysubsubsection{\texorpdfstring{thread\_local\_variable\_auto}{thread\_local\_variable\_auto}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+friend \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::data\+::thread\+\_\+local\+\_\+variable\+\_\+auto\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 211 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8h}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+h}}\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8inl}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl}}\end{DoxyCompactItemize}

@@ -1,0 +1,226 @@
+\hypertarget{classthread__local__variable__type__pool__base}{}\doxysection{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base Class Reference}
+\label{classthread__local__variable__type__pool__base}\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+
+
+T\+L\+VM / 형식 요소 별로 특정 스레드 마다 할당하는 메모리 풀 (기반 클래스)  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+local\+\_\+variable\+\_\+manager.\+h$>$}
+
+
+
+Inheritance diagram for thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classthread__local__variable__type__pool__base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classthread__local__variable__type__pool__base__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthread__local__variable__type__pool__base_a5ed6897ea1840db151350588b724fab2}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base}} ()=default
+\item 
+void $\ast$ \mbox{\hyperlink{classthread__local__variable__type__pool__base_a35d6e34480be3d49823e95fed08b2cba}{construct}} (size\+\_\+t p\+Size, bool p\+Do\+Call\+Ctor\+Dtor\+Always, size\+\_\+t p\+Reserve, bool \&p\+Is\+Just\+Made)
+\item 
+void \mbox{\hyperlink{classthread__local__variable__type__pool__base_ab108142286b3d316ad6abcd05d1a5a5d}{destroy}} (void $\ast$p\+Data, bool p\+Do\+Call\+Ctor\+Dtor\+Always)
+\item 
+virtual void \mbox{\hyperlink{classthread__local__variable__type__pool__base_a91b7a4c7b92df2b7280e6cc63226b332}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ void $\ast$ $>$ \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8fd7f483d725fba95634ed3676eee130}{m\+\_\+\+List}}
+\begin{DoxyCompactList}\small\item\em 원본 메모리 목록 관리 \end{DoxyCompactList}\item 
+std\+::queue$<$ void $\ast$ $>$ \mbox{\hyperlink{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}{m\+\_\+\+Pool\+\_\+\+Obj}}
+\begin{DoxyCompactList}\small\item\em 형식 메모리 목록 관리 \+: 생성자를 최초 호출 후에 소멸자는 앱 종료 시에만 호출 → 기본 생성자가 호출된 객체 상태 \end{DoxyCompactList}\item 
+std\+::queue$<$ void $\ast$ $>$ \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\+\_\+\+Pool\+\_\+\+Raw}}
+\begin{DoxyCompactList}\small\item\em 형식 메모리 목록 관리 \+: 생성자 / 소멸자를 매번 호출 → 메모리 청크 상태 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+T\+L\+VM / 형식 요소 별로 특정 스레드 마다 할당하는 메모리 풀 (기반 클래스) 
+
+\begin{DoxyRemark}{Remarks}
+사용자는 본 클래스를 직접적으로 사용하게 될 경우는 없음 
+\end{DoxyRemark}
+
+
+Definition at line 86 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a5ed6897ea1840db151350588b724fab2}\label{classthread__local__variable__type__pool__base_a5ed6897ea1840db151350588b724fab2}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{thread\_local\_variable\_type\_pool\_base()}{thread\_local\_variable\_type\_pool\_base()}}
+{\footnotesize\ttfamily thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a91b7a4c7b92df2b7280e6cc63226b332}\label{classthread__local__variable__type__pool__base_a91b7a4c7b92df2b7280e6cc63226b332}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!clear@{clear}}
+\index{clear@{clear}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classthread__local__variable__type__pool_a0cac331195d20fc00b5d9f621719ba32}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool$<$ T\+T\+Y\+P\+E $>$}}.
+
+
+
+Definition at line 184 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{185 \{}
+\DoxyCodeLine{186     std::queue<void*> empty;}
+\DoxyCodeLine{187     std::swap(\mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}, empty);}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8fd7f483d725fba95634ed3676eee130}{m\_List}}.clear();}
+\DoxyCodeLine{190 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a35d6e34480be3d49823e95fed08b2cba}\label{classthread__local__variable__type__pool__base_a35d6e34480be3d49823e95fed08b2cba}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!construct@{construct}}
+\index{construct@{construct}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{construct()}{construct()}}
+{\footnotesize\ttfamily void $\ast$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::construct (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+Size,  }\item[{bool}]{p\+Do\+Call\+Ctor\+Dtor\+Always,  }\item[{size\+\_\+t}]{p\+Reserve,  }\item[{bool \&}]{p\+Is\+Just\+Made }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 130 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131 \{}
+\DoxyCodeLine{132 \textcolor{comment}{//  assert      1 <= pSize}}
+\DoxyCodeLine{133 \textcolor{comment}{//  assert      1 <= pReserve}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keywordflow}{if} (\textcolor{keyword}{false} == pDoCallCtorDtorAlways \&\&}
+\DoxyCodeLine{136         \textcolor{keyword}{false} == \mbox{\hyperlink{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}{m\_Pool\_Obj}}.empty()}
+\DoxyCodeLine{137     )}
+\DoxyCodeLine{138     \{}
+\DoxyCodeLine{139         \textcolor{keywordtype}{void}* aChunk1 = \mbox{\hyperlink{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}{m\_Pool\_Obj}}.front();}
+\DoxyCodeLine{140         \mbox{\hyperlink{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}{m\_Pool\_Obj}}.pop();}
+\DoxyCodeLine{141         \textcolor{keywordflow}{return} aChunk1;}
+\DoxyCodeLine{142     \}}
+\DoxyCodeLine{143     }
+\DoxyCodeLine{144     \textcolor{keywordflow}{if} (\textcolor{keyword}{true} == \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.empty()) \{}
+\DoxyCodeLine{145         \textcolor{keywordtype}{void}* aChunk2 = malloc(pSize * pReserve);}
+\DoxyCodeLine{146         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == aChunk2) \{}
+\DoxyCodeLine{147             \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{148         \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8fd7f483d725fba95634ed3676eee130}{m\_List}}.push\_back(aChunk2);}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} aIdx = 0 ; pReserve > aIdx ; ++aIdx) \{}
+\DoxyCodeLine{153             \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.push(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(aChunk2) + (pSize * aIdx)));}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155     \}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (\textcolor{keyword}{true} == \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.empty()) \{}
+\DoxyCodeLine{158         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     pIsJustMade = \textcolor{keyword}{true};}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     \textcolor{keywordtype}{void}* aChunk3 = \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.front();}
+\DoxyCodeLine{164     \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.pop();}
+\DoxyCodeLine{165     \textcolor{keywordflow}{return} aChunk3;}
+\DoxyCodeLine{166 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_ab108142286b3d316ad6abcd05d1a5a5d}\label{classthread__local__variable__type__pool__base_ab108142286b3d316ad6abcd05d1a5a5d}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!destroy@{destroy}}
+\index{destroy@{destroy}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::destroy (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+Data,  }\item[{bool}]{p\+Do\+Call\+Ctor\+Dtor\+Always }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 168 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169 \{}
+\DoxyCodeLine{170 \textcolor{comment}{//  assert      nullptr != pData}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == pData) \{}
+\DoxyCodeLine{173         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{keywordflow}{if} (\textcolor{keyword}{true} == pDoCallCtorDtorAlways) \{}
+\DoxyCodeLine{177         \mbox{\hyperlink{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}{m\_Pool\_Raw}}.push(pData);}
+\DoxyCodeLine{178     \}}
+\DoxyCodeLine{179     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{180         \mbox{\hyperlink{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}{m\_Pool\_Obj}}.push(pData);}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a8fd7f483d725fba95634ed3676eee130}\label{classthread__local__variable__type__pool__base_a8fd7f483d725fba95634ed3676eee130}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!m\_List@{m\_List}}
+\index{m\_List@{m\_List}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{m\_List}{m\_List}}
+{\footnotesize\ttfamily std\+::list$<$void$\ast$$>$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::m\+\_\+\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+원본 메모리 목록 관리 
+
+
+
+Definition at line 98 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}\label{classthread__local__variable__type__pool__base_a63dcf22496ba0786d71681b4205250ab}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!m\_Pool\_Obj@{m\_Pool\_Obj}}
+\index{m\_Pool\_Obj@{m\_Pool\_Obj}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{m\_Pool\_Obj}{m\_Pool\_Obj}}
+{\footnotesize\ttfamily std\+::queue$<$void$\ast$$>$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::m\+\_\+\+Pool\+\_\+\+Obj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+형식 메모리 목록 관리 \+: 생성자를 최초 호출 후에 소멸자는 앱 종료 시에만 호출 → 기본 생성자가 호출된 객체 상태 
+
+
+
+Definition at line 99 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}\label{classthread__local__variable__type__pool__base_a8f1bd6e0f97f43553f8296a4c10a6bd3}} 
+\index{thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}!m\_Pool\_Raw@{m\_Pool\_Raw}}
+\index{m\_Pool\_Raw@{m\_Pool\_Raw}!thread\_local\_variable\_type\_pool\_base@{thread\_local\_variable\_type\_pool\_base}}
+\doxysubsubsection{\texorpdfstring{m\_Pool\_Raw}{m\_Pool\_Raw}}
+{\footnotesize\ttfamily std\+::queue$<$void$\ast$$>$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base\+::m\+\_\+\+Pool\+\_\+\+Raw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+형식 메모리 목록 관리 \+: 생성자 / 소멸자를 매번 호출 → 메모리 청크 상태 
+
+
+
+Definition at line 100 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8h}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+h}}\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8inl}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl}}\end{DoxyCompactItemize}

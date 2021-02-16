@@ -1,0 +1,90 @@
+\hypertarget{thread__local__variable__manager_8h}{}\doxysection{I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/thread\+\_\+local\+\_\+variable\+\_\+manager.h File Reference}
+\label{thread__local__variable__manager_8h}\index{I:/thread\_local\_variable\_manager/Source/thread\_local\_variable\_manager.h@{I:/thread\_local\_variable\_manager/Source/thread\_local\_variable\_manager.h}}
+
+
+T\+L\+VM 기능에 연관된 클래스들을 선언  
+
+
+{\ttfamily \#include $<$boost/uuid/uuid.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/uuid/uuid\+\_\+generators.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/uuid/uuid\+\_\+io.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/lexical\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/thread/thread.\+hpp$>$}\newline
+{\ttfamily \#include $<$tbb/concurrent\+\_\+unordered\+\_\+map.\+h$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$new$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include \char`\"{}thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl\char`\"{}}\newline
+Include dependency graph for thread\+\_\+local\+\_\+variable\+\_\+manager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__local__variable__manager_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 이 관리하는 형식(들) 각각에 대한 고유 번호 (U\+U\+ID) 를 관리 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__type__pool__base}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM / 형식 요소 별로 특정 스레드 마다 할당하는 메모리 풀 (기반 클래스) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__type__pool}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool$<$ T\+T\+Y\+P\+E $>$}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM / 형식 요소 별로 특정 스레드 마다 할당하는 메모리 풀 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__type__base}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 에서 특정 형식을 관리하기 위한 형식 요소 클래스 (기반 클래스) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__type__elem}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+elem$<$ T\+T\+Y\+P\+E $>$}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 에서 특정 형식을 관리하기 위한 형식 요소 클래스 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+P\+E, V\+C\+T\+D\+T, V\+R\+S\+S\+Z $>$}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 를 통해 사용자가 지역 변수를 대체할 목적으로 사용 (이하 T\+L\+VA) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structthread__local__variable__auto_1_1data}{thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+P\+E, V\+C\+T\+D\+T, V\+R\+S\+S\+Z $>$\+::data}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 이 특정 데이터 형식에 대해서 할당한 메모리를 관리하며 사용자가 접근할 수 있도록 중계 기능 제공 \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classthread__local__variable__manager}{thread\+\_\+local\+\_\+variable\+\_\+manager}}
+\begin{DoxyCompactList}\small\item\em 사용자가 T\+LS 방식으로 지역 변수를 대체할 수 있는 기능들을 제공 / 관리 (이하 T\+L\+VM) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structstd_1_1hash_3_01thread__local__variable__type__uuid_01_4}{std\+::hash$<$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid $>$}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classthread__local__variable__type__uuid}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+uuid}} 를 tbb\+::concurrent\+\_\+unordered\+\_\+map 의 키로 사용하기 위한 해시 함수 구조체 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacestd}{std}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__local__variable__manager_8h_a5fb0b8dd125c8cc8e9f473da31ee3bc6}{B\+O\+O\+S\+T\+\_\+\+U\+U\+I\+D\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+N\+O\+\_\+\+L\+IB}}
+\item 
+\#define \mbox{\hyperlink{thread__local__variable__manager_8h_a766c8a9774593a0dfe8653195c8f64e7}{B\+O\+O\+S\+T\+\_\+\+U\+U\+I\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+A\+U\+T\+O\+\_\+\+L\+I\+NK}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+T\+L\+VM 기능에 연관된 클래스들을 선언 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{thread__local__variable__manager_8h_a766c8a9774593a0dfe8653195c8f64e7}\label{thread__local__variable__manager_8h_a766c8a9774593a0dfe8653195c8f64e7}} 
+\index{thread\_local\_variable\_manager.h@{thread\_local\_variable\_manager.h}!BOOST\_UUID\_FORCE\_AUTO\_LINK@{BOOST\_UUID\_FORCE\_AUTO\_LINK}}
+\index{BOOST\_UUID\_FORCE\_AUTO\_LINK@{BOOST\_UUID\_FORCE\_AUTO\_LINK}!thread\_local\_variable\_manager.h@{thread\_local\_variable\_manager.h}}
+\doxysubsubsection{\texorpdfstring{BOOST\_UUID\_FORCE\_AUTO\_LINK}{BOOST\_UUID\_FORCE\_AUTO\_LINK}}
+{\footnotesize\ttfamily \#define B\+O\+O\+S\+T\+\_\+\+U\+U\+I\+D\+\_\+\+F\+O\+R\+C\+E\+\_\+\+A\+U\+T\+O\+\_\+\+L\+I\+NK}
+
+
+
+Definition at line 21 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+\mbox{\Hypertarget{thread__local__variable__manager_8h_a5fb0b8dd125c8cc8e9f473da31ee3bc6}\label{thread__local__variable__manager_8h_a5fb0b8dd125c8cc8e9f473da31ee3bc6}} 
+\index{thread\_local\_variable\_manager.h@{thread\_local\_variable\_manager.h}!BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB@{BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB}}
+\index{BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB@{BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB}!thread\_local\_variable\_manager.h@{thread\_local\_variable\_manager.h}}
+\doxysubsubsection{\texorpdfstring{BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB}{BOOST\_UUID\_RANDOM\_PROVIDER\_NO\_LIB}}
+{\footnotesize\ttfamily \#define B\+O\+O\+S\+T\+\_\+\+U\+U\+I\+D\+\_\+\+R\+A\+N\+D\+O\+M\+\_\+\+P\+R\+O\+V\+I\+D\+E\+R\+\_\+\+N\+O\+\_\+\+L\+IB}
+
+
+
+Definition at line 20 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+

@@ -1,0 +1,132 @@
+\hypertarget{classthread__local__variable__type__base}{}\doxysection{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base Class Reference}
+\label{classthread__local__variable__type__base}\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+
+
+T\+L\+VM 에서 특정 형식을 관리하기 위한 형식 요소 클래스 (기반 클래스)  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+local\+\_\+variable\+\_\+manager.\+h$>$}
+
+
+
+Inheritance diagram for thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classthread__local__variable__type__base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classthread__local__variable__type__base__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classthread__local__variable__type__base_a551204db7bfed2885b2395e90c48b421}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+tbb\+::concurrent\+\_\+unordered\+\_\+map$<$ std\+::thread\+::id, \mbox{\hyperlink{classthread__local__variable__type__pool__base}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base}} $\ast$, std\+::hash$<$ std\+::thread\+::id $>$ $>$ \mbox{\hyperlink{classthread__local__variable__type__base_a5384bff558f9093f2848185dfcc8d81e}{m\+\_\+\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classthread__local__variable__type__base_a196f7a5913a11d4c18e2a5cf5d991b0e}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classthread__local__variable__type__base_a2f712a8e36b3d53a58c8082afeedafee}{thread\+\_\+local\+\_\+variable\+\_\+manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+T\+L\+VM 에서 특정 형식을 관리하기 위한 형식 요소 클래스 (기반 클래스) 
+
+T\+L\+VM 가 특정 형식을 관리하는 기준 \begin{DoxyRemark}{Remarks}
+사용자는 본 클래스를 직접적으로 사용하게 될 경우는 없음 
+\end{DoxyRemark}
+
+
+Definition at line 133 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__base_a551204db7bfed2885b2395e90c48b421}\label{classthread__local__variable__type__base_a551204db7bfed2885b2395e90c48b421}} 
+\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}!thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}!thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+\doxysubsubsection{\texorpdfstring{thread\_local\_variable\_type\_base()}{thread\_local\_variable\_type\_base()}}
+{\footnotesize\ttfamily thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base\+::thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__base_a196f7a5913a11d4c18e2a5cf5d991b0e}\label{classthread__local__variable__type__base_a196f7a5913a11d4c18e2a5cf5d991b0e}} 
+\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}!clear@{clear}}
+\index{clear@{clear}!thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 226 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{227 \{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} aElem : \mbox{\hyperlink{classthread__local__variable__type__base_a5384bff558f9093f2848185dfcc8d81e}{m\_List}}) \{}
+\DoxyCodeLine{229         \textcolor{keywordflow}{if} (\textcolor{keyword}{nullptr} == aElem.second) \{}
+\DoxyCodeLine{230             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233         aElem.second-\/>clear();      \textcolor{comment}{// ???      // TID 별로 각각 하지않으면 위험 ?!! → tbb 컨테이너이므로 동기화 문제는 생기지 않겠지만 사용 중인 객체를 회수할 수도 있음}}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235         std::free(aElem.second);}
+\DoxyCodeLine{236     \}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238     \mbox{\hyperlink{classthread__local__variable__type__base_a5384bff558f9093f2848185dfcc8d81e}{m\_List}}.clear();}
+\DoxyCodeLine{239 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__base_a2f712a8e36b3d53a58c8082afeedafee}\label{classthread__local__variable__type__base_a2f712a8e36b3d53a58c8082afeedafee}} 
+\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}!thread\_local\_variable\_manager@{thread\_local\_variable\_manager}}
+\index{thread\_local\_variable\_manager@{thread\_local\_variable\_manager}!thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+\doxysubsubsection{\texorpdfstring{thread\_local\_variable\_manager}{thread\_local\_variable\_manager}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classthread__local__variable__manager}{thread\+\_\+local\+\_\+variable\+\_\+manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 136 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classthread__local__variable__type__base_a5384bff558f9093f2848185dfcc8d81e}\label{classthread__local__variable__type__base_a5384bff558f9093f2848185dfcc8d81e}} 
+\index{thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}!m\_List@{m\_List}}
+\index{m\_List@{m\_List}!thread\_local\_variable\_type\_base@{thread\_local\_variable\_type\_base}}
+\doxysubsubsection{\texorpdfstring{m\_List}{m\_List}}
+{\footnotesize\ttfamily tbb\+::concurrent\+\_\+unordered\+\_\+map$<$std\+::thread\+::id, \mbox{\hyperlink{classthread__local__variable__type__pool__base}{thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+pool\+\_\+base}}$\ast$, std\+::hash$<$std\+::thread\+::id$>$ $>$ thread\+\_\+local\+\_\+variable\+\_\+type\+\_\+base\+::m\+\_\+\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 146 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8h}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+h}}\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8inl}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl}}\end{DoxyCompactItemize}

@@ -1,0 +1,316 @@
+\hypertarget{classthread__local__variable__auto}{}\doxysection{thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$ Class Template Reference}
+\label{classthread__local__variable__auto}\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+
+
+T\+L\+VM 를 통해 사용자가 지역 변수를 대체할 목적으로 사용 (이하 T\+L\+VA)  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+local\+\_\+variable\+\_\+manager.\+h$>$}
+
+
+
+Collaboration diagram for thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classthread__local__variable__auto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structthread__local__variable__auto_1_1data}{data}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VM 이 특정 데이터 형식에 대해서 할당한 메모리를 관리하며 사용자가 접근할 수 있도록 중계 기능 제공 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classthread__local__variable__auto_a4e1927e8824294a3cbeff775a06440d3}{value\+\_\+type}} = T\+T\+Y\+PE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename ... T\+A\+R\+GS$>$ }\\\mbox{\hyperlink{classthread__local__variable__auto_aee0236e5ef9a0126404af534b1ccab08}{thread\+\_\+local\+\_\+variable\+\_\+auto}} (T\+A\+R\+GS ... p\+Args)
+\begin{DoxyCompactList}\small\item\em 생성자 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classthread__local__variable__auto_a3172bf1cb2bbd70617cfdc5efb3a86eb}{$\sim$thread\+\_\+local\+\_\+variable\+\_\+auto}} ()
+\begin{DoxyCompactList}\small\item\em 소멸자 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classthread__local__variable__auto_af1bb4fb466942eb2172051f28e3ac159}{operator!}} () const noexcept
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 객체가 유효한지를 확인하는 용도 \end{DoxyCompactList}\item 
+const T\+T\+Y\+PE \& \mbox{\hyperlink{classthread__local__variable__auto_a1e5def9c3be5f42d2809c7af6098b8c9}{operator$\ast$}} () const
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 역참조 연산자 \end{DoxyCompactList}\item 
+T\+T\+Y\+PE \& \mbox{\hyperlink{classthread__local__variable__auto_ab9178cef40dd22afac9f627b34958ca4}{operator$\ast$}} ()
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 역참조 연산자 \end{DoxyCompactList}\item 
+const T\+T\+Y\+PE $\ast$ \mbox{\hyperlink{classthread__local__variable__auto_a7138c771bd05e0d000dc6b4ed46b0e9f}{operator-\/$>$}} () const
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 포인터 연산자 \end{DoxyCompactList}\item 
+T\+T\+Y\+PE $\ast$ \mbox{\hyperlink{classthread__local__variable__auto_a66c7c9dd157fcbcd5f849b0c1d369675}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 포인터 연산자 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structthread__local__variable__auto_1_1data}{data}} \mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\+\_\+\+Data}}
+\begin{DoxyCompactList}\small\item\em T\+L\+VA 가 거리키는 데이터 형식의 인스턴스를 관리 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T\+T\+Y\+PE, bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$\newline
+class thread\+\_\+local\+\_\+variable\+\_\+auto$<$ T\+T\+Y\+P\+E, V\+C\+T\+D\+T, V\+R\+S\+S\+Z $>$}
+
+T\+L\+VM 를 통해 사용자가 지역 변수를 대체할 목적으로 사용 (이하 T\+L\+VA) 
+
+사용자는 본 클래스 객체 (T\+L\+VA 변수) 를 생성 / 사용하는 것으로 T\+L\+VM 을 실질적으로 사용 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+T\+Y\+PE} & 사용자가 (지역 변수 대신) T\+L\+VA 로 생성하기를 원하는 데이터 형식 \\
+\hline
+{\em V\+C\+T\+DT} & T\+L\+VA 변수의 생명 주기의 시작과 끝에 항상 생성자 / 소멸자를 호출하기를 원하는지 여부 (true \+: 일반적인 지역 변수와 동일하게 동작 / false \+: 해당 데이터 형식의 소멸자는 프로세스 종료 시에만 호출) \\
+\hline
+{\em V\+R\+S\+SZ} & T\+L\+VA 변수 생성 시 내부적으로 관리하는 메모리 풀의 자원이 고갈 시 마다 생성할 메모리 청크의 개수 \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 196 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classthread__local__variable__auto_a4e1927e8824294a3cbeff775a06440d3}\label{classthread__local__variable__auto_a4e1927e8824294a3cbeff775a06440d3}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+using \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::\mbox{\hyperlink{classthread__local__variable__auto_a4e1927e8824294a3cbeff775a06440d3}{value\+\_\+type}} =  T\+T\+Y\+PE}
+
+
+
+Definition at line 202 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classthread__local__variable__auto_aee0236e5ef9a0126404af534b1ccab08}\label{classthread__local__variable__auto_aee0236e5ef9a0126404af534b1ccab08}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!thread\_local\_variable\_auto@{thread\_local\_variable\_auto}}
+\index{thread\_local\_variable\_auto@{thread\_local\_variable\_auto}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{thread\_local\_variable\_auto()}{thread\_local\_variable\_auto()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+template$<$typename ... T\+A\+R\+GS$>$ \\
+\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}} (\begin{DoxyParamCaption}\item[{T\+A\+R\+GS ...}]{p\+Args }\end{DoxyParamCaption})}
+
+
+
+생성자 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em ...\+vargs...} & 사용자는 T\+L\+VA 선언 시 원래 데이터 형식을 선언할 때와 동일하게 생성자 인자를 지정 가능 \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 298 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{299     : \mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\_Data}}(thread\_local\_variable\_manager::\_construct<TTYPE, VCTDT, VRSSZ>(pArgs ...))}
+\DoxyCodeLine{300 \{}
+\DoxyCodeLine{301     }
+\DoxyCodeLine{302 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classthread__local__variable__auto_a3172bf1cb2bbd70617cfdc5efb3a86eb}\label{classthread__local__variable__auto_a3172bf1cb2bbd70617cfdc5efb3a86eb}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!````~thread\_local\_variable\_auto@{$\sim$thread\_local\_variable\_auto}}
+\index{````~thread\_local\_variable\_auto@{$\sim$thread\_local\_variable\_auto}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$thread\_local\_variable\_auto()}{~thread\_local\_variable\_auto()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT, size\+\_\+t V\+R\+S\+SZ$>$ \\
+\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::$\sim$\mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}}
+
+
+
+소멸자 
+
+
+
+Definition at line 305 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{306 \{}
+\DoxyCodeLine{307 \textcolor{comment}{//  std::cout << "thread\_local\_variable\_auto destructor" << std::endl;}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\_Data}}.\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a5f11ee33cdf8451b710f9586465d64b2}{release}}();}
+\DoxyCodeLine{310 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classthread__local__variable__auto_af1bb4fb466942eb2172051f28e3ac159}\label{classthread__local__variable__auto_af1bb4fb466942eb2172051f28e3ac159}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+bool \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::operator! (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+T\+L\+VA 객체가 유효한지를 확인하는 용도 
+
+\begin{DoxyReturn}{Returns}
+T\+L\+VA 객체가 유효한지 여부 (true \+: 유효 / false \+: 사용 불가) 
+\end{DoxyReturn}
+
+
+Definition at line 268 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{269     \{}
+\DoxyCodeLine{270         \textcolor{keywordflow}{return} !(\mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\_Data}}.\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8702e75272217ff1d0cef8b92bbfd48b}{is\_initialized}}());}
+\DoxyCodeLine{271     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classthread__local__variable__auto_af1bb4fb466942eb2172051f28e3ac159_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classthread__local__variable__auto_ab9178cef40dd22afac9f627b34958ca4}\label{classthread__local__variable__auto_ab9178cef40dd22afac9f627b34958ca4}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+T\+T\+Y\+PE\& \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 역참조 연산자 
+
+\begin{DoxyReturn}{Returns}
+T\+L\+VA 객체가 가리키는 특정 데이터 형식의 인스턴스의 참조 반환 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{287     \{}
+\DoxyCodeLine{288         \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}TTYPE\&\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{classthread__local__variable__auto}{thread\_local\_variable\_auto}}*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>\textcolor{keyword}{operator}*());}
+\DoxyCodeLine{289     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classthread__local__variable__auto_a1e5def9c3be5f42d2809c7af6098b8c9}\label{classthread__local__variable__auto_a1e5def9c3be5f42d2809c7af6098b8c9}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+const T\+T\+Y\+PE\& \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 역참조 연산자 
+
+\begin{DoxyReturn}{Returns}
+T\+L\+VA 객체가 가리키는 특정 데이터 형식의 인스턴스의 참조 반환 
+\end{DoxyReturn}
+
+
+Definition at line 277 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{278     \{}
+\DoxyCodeLine{279         \textcolor{keywordflow}{return} *(\mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\_Data}}.\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}{get}}());}
+\DoxyCodeLine{280     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classthread__local__variable__auto_a1e5def9c3be5f42d2809c7af6098b8c9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classthread__local__variable__auto_a66c7c9dd157fcbcd5f849b0c1d369675}\label{classthread__local__variable__auto_a66c7c9dd157fcbcd5f849b0c1d369675}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+T\+T\+Y\+PE$\ast$ \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 포인터 연산자 
+
+\begin{DoxyReturn}{Returns}
+T\+L\+VA 객체가 가리키는 특정 데이터 형식의 인스턴스의 포인터 반환 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{305     \{}
+\DoxyCodeLine{306         \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<}TTYPE*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{classthread__local__variable__auto}{thread\_local\_variable\_auto}}*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>operator-\/>());}
+\DoxyCodeLine{307     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classthread__local__variable__auto_a7138c771bd05e0d000dc6b4ed46b0e9f}\label{classthread__local__variable__auto_a7138c771bd05e0d000dc6b4ed46b0e9f}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+const T\+T\+Y\+PE$\ast$ \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+T\+L\+VA 객체가 가리키는 특정 데이터 형식에 대한 인스턴스에 접근하기 위한 포인터 연산자 
+
+\begin{DoxyReturn}{Returns}
+T\+L\+VA 객체가 가리키는 특정 데이터 형식의 인스턴스의 포인터 반환 
+\end{DoxyReturn}
+
+
+Definition at line 295 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{296     \{}
+\DoxyCodeLine{297         \textcolor{keywordflow}{return} \mbox{\hyperlink{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}{m\_Data}}.\mbox{\hyperlink{structthread__local__variable__auto_1_1data_a8552e813568941976868b93d001c3282}{get}}();}
+\DoxyCodeLine{298     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classthread__local__variable__auto_a7138c771bd05e0d000dc6b4ed46b0e9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}\label{classthread__local__variable__auto_ad496095838be4c7fc8ea8bcad546d46b}} 
+\index{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}!m\_Data@{m\_Data}}
+\index{m\_Data@{m\_Data}!thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$@{thread\_local\_variable\_auto$<$ TTYPE, VCTDT, VRSSZ $>$}}
+\doxysubsubsection{\texorpdfstring{m\_Data}{m\_Data}}
+{\footnotesize\ttfamily template$<$typename T\+T\+Y\+PE , bool V\+C\+T\+DT = false, size\+\_\+t V\+R\+S\+SZ = 1$>$ \\
+\mbox{\hyperlink{structthread__local__variable__auto_1_1data}{data}} \mbox{\hyperlink{classthread__local__variable__auto}{thread\+\_\+local\+\_\+variable\+\_\+auto}}$<$ T\+T\+Y\+PE, V\+C\+T\+DT, V\+R\+S\+SZ $>$\+::m\+\_\+\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+T\+L\+VA 가 거리키는 데이터 형식의 인스턴스를 관리 
+
+
+
+Definition at line 310 of file thread\+\_\+local\+\_\+variable\+\_\+manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8h}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+h}}\item 
+I\+:/thread\+\_\+local\+\_\+variable\+\_\+manager/\+Source/\mbox{\hyperlink{thread__local__variable__manager_8inl}{thread\+\_\+local\+\_\+variable\+\_\+manager.\+inl}}\end{DoxyCompactItemize}

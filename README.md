@@ -123,11 +123,11 @@ class thread_local_variable_auto
 <br>
 
 ## Tests
-TLVA 에 대한 각종 테스트들은 [Test 폴더](Test/) 에서 확인할 수 있으며, 각 테스트의 목적은 아래와 같습니다.
+TLVM 에 대한 각종 테스트들은 [Test 폴더](Test/) 에서 확인할 수 있으며, 각 테스트의 목적은 아래와 같습니다.
 - `test_00_basic_usage`
-  : TLVA 의 다양한 사용 방식들을 확인하는 테스트
+  : TLVM 의 다양한 사용 방식들을 확인하는 테스트
 - `test_01_performance`
-  : TLVA 와 (일반적인) 지역 변수의 성능을 비교하는 테스트
+  : TLVM 와 (일반적인) 지역 변수의 성능을 비교하는 테스트
 - `test_02_thread_safety`
-  : TLVA 를 멀티 스레드 환경에서 사용 시의 안정성을 확인하는 테스트
+  : TLVM 를 멀티 스레드 환경에서 사용 시의 안정성을 확인하는 테스트
   
